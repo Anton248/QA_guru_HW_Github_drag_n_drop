@@ -27,7 +27,7 @@ public class DragDropTest {
 
     @Test
     void dragByDragAndDrop() {
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
 
 //Открыть https://the-internet.herokuapp.com/drag_and_drop
         open("https://the-internet.herokuapp.com/drag_and_drop");
