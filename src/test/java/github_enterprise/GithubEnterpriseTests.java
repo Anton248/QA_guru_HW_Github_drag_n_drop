@@ -21,6 +21,6 @@ public class GithubEnterpriseTests extends TestBaseGithub {
         $("a[href='/enterprise']").shouldHave(text("Enterprise")).click();
 
 // Грузится страница Enterprise с заголовком "Build like the best"
-        $(withTagAndText("h1", "Build like the best")).should(visible);
+        $(withTagAndText("h1", "Build like the best")).shouldBe(visible);
     }
 }
