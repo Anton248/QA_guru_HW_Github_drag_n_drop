@@ -39,5 +39,18 @@ public class DragDropTest {
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
     }
+/* К вопросу о неработающих командах. А почему на странице https://github.com/selenide/selenide
+поиск родителя .closest(".BorderGrid-cell") работает, а поиск .closest("div.BorderGrid-cell") не работает?
+Хотя элемент именно div. Более конкретно:
 
+        //работает
+        $("div.Layout-sidebar").$(byText("Contributors"))
+                .closest(".BorderGrid-cell").$$("ul li").first().hover();
+
+        //не работает
+        $("div.Layout-sidebar").$(byText("Contributors"))
+                .closest("div.BorderGrid-cell").$$("ul li").first().hover();
+
+Разница - только в наличии div в .closest()
+ */
 }
