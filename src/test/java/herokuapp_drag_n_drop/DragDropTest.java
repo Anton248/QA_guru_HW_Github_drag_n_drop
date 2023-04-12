@@ -43,6 +43,11 @@ public class DragDropTest {
 поиск родителя .closest(".BorderGrid-cell") работает, а поиск .closest("div.BorderGrid-cell") не работает?
 Хотя элемент именно div. Более конкретно:
 
+    @Test
+    void withAndWithoutDiv() {
+        Configuration.holdBrowserOpen = true;
+        open("https://github.com/selenide/selenide");
+
         //работает
         $("div.Layout-sidebar").$(byText("Contributors"))
                 .closest(".BorderGrid-cell").$$("ul li").first().hover();
@@ -50,7 +55,7 @@ public class DragDropTest {
         //не работает
         $("div.Layout-sidebar").$(byText("Contributors"))
                 .closest("div.BorderGrid-cell").$$("ul li").first().hover();
-
+    }
 Разница - только в наличии div в .closest()
  */
 }
